@@ -1,0 +1,10 @@
+﻿Homework #2 Question 2:
+(3,5),(3,6),(3,4),(2,4),(1,4),(1,3),(1,2),(1,1),(2,1),(3,3),(4,5),(5,5)
+
+
+Question 4:
+(3,5),(4,5),(3,4),(3,6),(5,5),(3,3),(2,4),(6,5),(5,4),(1,4),(7,5),(5,3)
+
+
+The algorithm using a queue makes the current coordinate the front of the queue which is the oldest element added or the one that's been in the queue the longest. So the new elements being added, the ones looking at the potential open spots south,west,ect, are added to the queue in relation to the “oldest” element in the queue. Then the “oldest” element is removed and the process continues. The next current coordinate will be the next oldest element and not the newest coordinate added. This means that the queue is filled with elements that may have no direct relation to the coordinates that were just added to the stack the iteration before. In other words, as you go down the queue, the coordinates might not follow a linear path, they will be jumping around instead.
+        With a stack algorithm since the element being removed is the most recently one added and the current coordinate looks at the most recent one added, the stack gets filled following one direction until that path is completed. Then it goes back to the next element and does its pathway. The coordinate (4,5) which is the one directly south of the starting point and the first coordinate to get added to the stack doesn’t become the current coordinate until all the potential paths of the coordinates west and east get completed and tested.
