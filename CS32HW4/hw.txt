@@ -1,0 +1,16 @@
+﻿2.  The one argument call of insert uses the comparison operators < and > to determine where in the sequence the object should be inserted. However for coord objects, the comparison operator hasn’t been defined so it doesn't know what to do. In the two argument call since you give the position as a parameter there isn’t any need for comparison operators. As for the integer version, it is already defined how to compare two integers.
+
+
+4b. You need a second parameter to keep track of current string of domains and subdomains, the subdomains have no way of knowing what is above them so once you recursively got down to cs it wouldn't know the domain above it. 
+
+
+5a.  Starting from the inside, all of the lines inside the most inner loop are constant time and that loop goes through N number of elements meaning its O(n). Then the other statements within the next loop are constant time and that loop goes through N elements. Multiplying that O(n) by the nested loops O(n) gives you O(n^2). The one line inside that last loop is also constant time and that loop loops through N elements. So multiplying by another O(n) gives us O(n^3) in total.
+
+
+5b. The time complexity of this program is still O(n^3) if we are disreadging constants, having the second loop depend on i instead of N helps decreases the constant of proportionality but it is still going to be some constant times O(n) which multiplied with the other two O(n) still gives us O(n^3) in total just with a much better constant of proportionality.
+
+
+6a. The time complexity in terms of number of items visited is O(n) because the first loop will visit a maximum of N items and the second will visit N - a constant items,  if you add those two together you get O(n) times a constant but disregarding the constant of proportionality gives you O(n).
+
+
+6b.  The time complexity in terms of number of items visited is still O(n) because the first loop visites N items and the second visits N- a constant items, however this will be faster because within each loop this has less to do whereas the other function has to call the get function twice to insert this one just has to insert. This function will have a better constant of proportionality in terms of time.
